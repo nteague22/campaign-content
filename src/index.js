@@ -1,11 +1,16 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
-import { RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
-import Campaigns from "./Campaigns";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import Campaigns, { Ariston, CampaignLanding, Landing } from "./Campaigns";
 
 const mount = document.getElementById("mountpoint");
 if (mount instanceof HTMLDivElement) {
     const router = createBrowserRouter(
-        createRoutesFromElements(<Campaigns />)
+        createRoutesFromElements(
+            <Route path="/" element={<CampaignLanding />}>
+                <Route index={true} element={<Landing />} />
+                <Route path="ariston" element={<Ariston />} />
+            </Route>)
     );
     const root = createRoot(mount);
     root.render(

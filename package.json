@@ -2,8 +2,8 @@
   "name": "campaign-content",
   "version": "1.0.0",
   "scripts": {
-    "start": "sirv ./src public --cors --single --no-clear --port 8000",
-    "debug": "webpack -d --mode development --watch",
+    "start": "sirv ./build public --cors --single --no-clear --port 8000",
+    "debug": "webpack --mode development --env development --watch",
     "publish:azure": "webpack --mode production --env production"
   },
   "dependencies": {

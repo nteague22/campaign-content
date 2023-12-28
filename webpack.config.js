@@ -21,7 +21,6 @@ module.exports =
                 asyncChunks: true,
                 compareBeforeEmit: true,
                 filename: "[name]-[contenthash].js",
-                assetModuleFilename: "[file]",
                 clean: opts?.watch ?? true,
                 path: path.resolve(__dirname, "build"),
                 publicPath: "/",
@@ -41,19 +40,22 @@ module.exports =
                     },
                     {
                         test: /\.png|\.jpg|\.jpeg|\.webp$/,
-                        type: "asset/resource"
+                        type: "asset/resource",
+                        generator: {
+                            filename: "[file]"
+                        }
                     },
                     {
                         test: /\.css$/,
                         type: "asset/resource",
                         generator: {
-                            filename: "css/[name]-[contenthash][ext]"
+                            filename: "css/[name]-[contenthash].css"
                         }
                     }
                 ],
             },
             resolve: {
-                extensions: [".jsx", ".json", ".js"],
+                extensions: [".jsx", ".json", ".js", ".css"],
             },
             plugins: [
                 new HtmlPlugin({

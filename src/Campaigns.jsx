@@ -1,4 +1,5 @@
-const { Route, NavLink, Outlet } = require("react-router-dom")
+import { Route, NavLink, Outlet } from "react-router-dom";
+import React from "react";
 
 export default function Campaigns() {
     return (
@@ -9,7 +10,7 @@ export default function Campaigns() {
         );
 }
 
-function Landing() {
+export function Landing() {
     return (
     <div>
         <main>
