@@ -42,6 +42,13 @@ module.exports =
                     {
                         test: /\.png|\.jpg|\.jpeg|\.webp$/,
                         type: "asset/resource"
+                    },
+                    {
+                        test: /\.css$/,
+                        type: "asset/resource",
+                        generator: {
+                            filename: "css/[name]-[contenthash][ext]"
+                        }
                     }
                 ],
             },
@@ -50,9 +57,9 @@ module.exports =
             },
             plugins: [
                 new HtmlPlugin({
-                    hash: true,
                     showErrors: !opts.mode?.production,
                     template: "src/index.html",
+                    excludeChunks: ["images"]
                 }),
             ],
         };
