@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "module": "ESNext",
+        "moduleResolution": "Bundler"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
