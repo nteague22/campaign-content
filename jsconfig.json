@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "checkJs": true,
+        "module": "ESNext",
+        "moduleResolution": "bundler"
+    },
+    "typeAcquisition": {
+        "enable": true
+    }
+}
