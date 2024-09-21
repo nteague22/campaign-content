@@ -8,6 +8,8 @@ const locations = {
     lucidDreams: "lucid-dreams"
 };
 
+export const info = {path: "greenwalde", name: "Greendwalde Information"};
+
 export default function Greenwalde() {
     return (
         <div>

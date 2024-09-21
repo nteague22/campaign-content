@@ -1,19 +1,30 @@
 import { NavLink } from "react-router-dom";
+import { info as greenwaldeInfo } from "./greenwalde";
+import { root as aristonAdv } from "./ariston";
 
 function CampaignLanding() {
+    const infos = [greenwaldeInfo];
+    const adventures = [aristonAdv];
     return (
         <div>
-            <header>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="greenwalde">Greenwalde</NavLink>
-                <NavLink to="ariston">Ariston</NavLink>
-            </header>
             <main>
-                <h1>Campaign Content Pages</h1>
+                <h1>
+                    <strong>Campaign Content Pages</strong>
+                </h1>
+                <br />
+                <p>
+                    This is the landing page for the campaigns collection!
+                    Choose one of the campaigns below:
+                    <ul>
+                        {adventures.map(adv => <li key={adv.name}><NavLink to={adv.path}>{adv.name}</NavLink></li>)}
+                    </ul>
+                    <br />
+                    For information on locations:
+                    <ul>
+                        {infos.map(info => <li key={info.name}><NavLink to={info.path}>{info.name}</NavLink></li>)}
+                    </ul>
+                </p>
             </main>
-            <p>
-                Please select one of the campaigns to the left to view the content for the campaign.
-            </p>
         </div>
     );
 }

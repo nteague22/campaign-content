@@ -1,14 +1,17 @@
 import { NavLink, Outlet } from "react-router-dom";
 
-const campaigns = {
-    newBeginning: "a-new-beginning"
+export const root = {path: "ariston", name: "Ariston Adventures"};
+
+const adventures = {
+    newBeginning: { path: "a-new-beginning", name: "A New Beginning"}
 };
 
 function Ariston() {
     return <div>
         <header>
             <ul>
-                <li><NavLink to={campaigns.newBeginning}>A New Beginning</NavLink></li>
+                <li><NavLink to={"/"}>Home</NavLink></li>
+                <li><NavLink to={"/ariston"}>Ariston</NavLink></li>
             </ul>
         </header>
         <Outlet />
@@ -19,7 +22,11 @@ function Landing() {
     return (
         <main>
             <p>
-                Select one of the campaigns
+                Adventures in the town of Ariston
+                <br />
+                <ul>
+                    {Object.values(adventures).map(adv => <li key={adv.path}><NavLink to={adv.path}>{adv.name}</NavLink></li>)}
+                </ul>
             </p>
         </main>
     );
@@ -30,6 +37,6 @@ export const Routes = {
     Component: Ariston,
     children: [
         { index: true, Component: Landing },
-        { path: campaigns.newBeginning, lazy: (() => import("./a-new-beginning")) }
+        { path: adventures.newBeginning.path, lazy: (() => import("./a-new-beginning")) }
     ]
 };
