@@ -1,4 +1,4 @@
-export function Component() {
+export default function NewBeginning() {
     return (
         <div>
             <main>

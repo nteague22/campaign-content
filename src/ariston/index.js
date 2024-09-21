@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-
+import NewBeginning from "./a-new-beginning";
 export const root = {path: "ariston", name: "Ariston Adventures"};
 
 const adventures = {
@@ -34,9 +34,15 @@ function Landing() {
 
 export const Routes = {
     path: "/ariston",
-    Component: Ariston,
+    element: <Ariston />,
     children: [
-        { index: true, Component: Landing },
-        { path: adventures.newBeginning.path, lazy: (() => import("./a-new-beginning")) }
+        { 
+            index: true, 
+            element: <Landing />
+        },
+        { 
+            path: adventures.newBeginning.path, 
+            element: <NewBeginning /> 
+        }
     ]
 };

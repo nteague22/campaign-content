@@ -10,7 +10,10 @@ if (mount instanceof HTMLDivElement) {
         CampaignRoot,
         Ariston,
         Greenwalde
-    ]);
+    ], { future: { v7_fetcherPersist: true }});
     const root = createRoot(mount);
-    root.render(<RouterProvider router={router} />);
+    root.render(<RouterProvider 
+        router={router}
+        fallbackElement={<div><span>Loading Content...</span></div>}
+        />);
 }

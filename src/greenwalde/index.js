@@ -59,9 +59,9 @@ function Landing() {
 
 export const Routes = {
     path: "/greenwalde",
-    Component: Greenwalde,
+    element: <Greenwalde />,
     children: [
-        { index: true, Component: Landing },
+        { index: true, element: <Landing /> },
         { path: locations.dunleavys, lazy: (() => import("./Dunleavys")) },
         { path: locations.temple, lazy: (() => import("./Temple")) },
         { path: locations.whispers, lazy: (() => import("./Whispers")) },
