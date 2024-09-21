@@ -5,7 +5,7 @@ export default function NewBeginning() {
                 <p>
                     <h1><strong>Ariston: A new beginning...</strong></h1>
                     <br />
-                    <img src="/images/ariston/ariston-map.png" width={1116} height={902} />
+                    <img src="/images/ariston/ariston_map_74x75.png" width={1116} height={1080} />
                 </p>
                 <h2><strong>Introduction</strong></h2>
                 <p>
